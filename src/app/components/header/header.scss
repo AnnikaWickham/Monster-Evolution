@@ -7,16 +7,17 @@ header {
     align-items: center;
     justify-content: space-between;
 }
-span {
-    cursor: pointer;
-    &:hover {
-        color: rgb(158, 158, 242);
-    }
-}
+
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    span {
+        cursor: pointer;
+        &:hover {
+            color: rgb(158, 158, 242);
+        }
+    }
     ul {
         list-style: none;
         li {

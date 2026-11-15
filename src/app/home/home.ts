@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { Greeting } from '../components/greeting/greeting';
 import { Counter } from '../components/counter/counter';
+import { Monster } from '../components/monster/monster';
 
 
 @Component({
-  imports: [Greeting, Counter],
+  imports: [Greeting, Counter, Monster],
   selector: 'app-home',
   styleUrl: './home.scss',
   templateUrl: './home.html',
