@@ -9,5 +9,4 @@ import { Header } from './components/header/header';
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('ok title');
 }

@@ -1,10 +1,9 @@
 <div class="home-container">
-    hi
     <app-greeting [greetingMessage] = "greetingMessage()"></app-greeting>
-    <input placeholder="type something :)" type="text" (keyup)='keyUpHandeler($event)'>
     <app-counter></app-counter>
     <div class="monster">
-        <app-monster></app-monster>
+        <app-monster [color]="monsterColor"></app-monster>
     </div>
+    <app-color-picker (colorSelected)="updateMonsterColor($event)"></app-color-picker>
 
 </div>
