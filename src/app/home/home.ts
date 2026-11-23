@@ -14,9 +14,14 @@ import { ColorPicker } from '../components/color-picker/color-picker';
 export class Home {
   greetingMessage = signal("Hello, I'm from home!");
   monsterColor = '#b3f47e';
+  monsterShape = "1";
 
   updateMonsterColor(color: string) {
     this.monsterColor = color;
+  }
+
+  getShapeNum(text: string) {
+    this.monsterShape = text;
   }
 }
 // TRYING TO SEND COLOR DATA FROM COLOR PICKER TO MONSTER 

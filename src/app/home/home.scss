@@ -2,19 +2,25 @@
     padding: 16px;
     background-color: beige;
 
-    .monster {
+    .monster-container {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 500px;
-        height: 500px;
-        background-color: red;
-        app-monster {
-            width: 100%;
-            height: 100%;
+        
+        .monster {
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 500px;
+            height: 500px;
+            background-color: red;
+            app-monster {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
         }
     }
+    
+
 }
