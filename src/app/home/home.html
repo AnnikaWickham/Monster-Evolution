@@ -1,0 +1,16 @@
+<div class="home-container">
+    <app-greeting [greetingMessage] = "greetingMessage()"></app-greeting>
+    <app-counter></app-counter>
+    <div class="monster-container">
+        <div class="monster">
+            <app-monster [color]="monsterColor" shape='1'></app-monster>
+        </div>
+        <div class="monster">
+            <app-monster [color]="monsterColor" [shape]="monsterShape"></app-monster>
+        </div>
+    </div>
+    <app-color-picker (colorSelected)="updateMonsterColor($event)"></app-color-picker>
+    <input type="text" #shapeInput (keyup.enter)="getShapeNum(shapeInput.value)">
+    MonsterShape: {{ monsterShape }}
+
+</div>

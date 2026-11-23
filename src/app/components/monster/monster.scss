@@ -1,0 +1,97 @@
+.monster-component {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .body { //universal for all shapes:
+        position: absolute;
+        background-color: #b3f47e;
+        height: 80%;
+        width: 80%;
+    }
+    .legs {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 85%;
+        height: 20%;
+        width: 35%;
+        
+        .left-leg {
+            background-color: none;
+            height: 75%;
+            width: 30%;
+            border: 5px solid black;
+            border-radius: 15%;
+            border-left: none; 
+            box-sizing: border-box;
+        }
+        .right-leg {
+            background-color: none;
+            height: 75%;
+            width: 30%;
+            border: 5px solid black;
+            border-radius: 15%;
+            border-right: none;
+            box-sizing: border-box;
+        }
+    }
+
+    .arms {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 15%;
+        width: 85%;
+
+        .left-arm {
+            background-color: none;
+            border-left: 5px solid black;
+            rotate: 30deg;
+        }
+        .right-arm {
+            background-color: none;
+            border-right: 5px solid black;
+            rotate: -30deg;
+        }
+    }
+    .eyes {
+        position: relative;
+        margin-top: -15%;
+        height: 30%;
+        width: 80%;
+    }
+
+    &.square {
+        .body {
+            border-radius: 15%;
+        }
+    }
+    &.circle {
+        .body {
+            border-radius: 50%;
+        }
+    }
+    &.triangle {
+        .body {
+            border-radius: 0%;
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+        }
+        .arms {
+            margin-top: 90px;
+            width: 60%;
+            .left-arm {
+                rotate: -30deg;
+            }
+            .right-arm {
+                rotate: 30deg;
+            }
+        }
+    }
+}
