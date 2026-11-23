@@ -10,7 +10,7 @@ The purpose of this project is to learn the Angular framework, specifically data
  ALSO building my Git and Github skills by using issues and branches instead of pushing everything to main. Hopefully will better understand code merging, pull requests, and repo management that I can use when working on
 future team projects!
 Learning by doing, trial and error. YAYYYY!
-# FirstNgApp
+# Monster-Evolution
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.6.
 
