@@ -7,13 +7,11 @@
     justify-content: center;
     position: relative;
 
-    .body {
+    .body { //universal for all shapes:
         position: absolute;
         background-color: #b3f47e;
-        
         height: 80%;
         width: 80%;
-        border-radius: 15%;
     }
     .legs {
         position: absolute;
@@ -68,5 +66,32 @@
         margin-top: -15%;
         height: 30%;
         width: 80%;
+    }
+
+    &.square {
+        .body {
+            border-radius: 15%;
+        }
+    }
+    &.circle {
+        .body {
+            border-radius: 50%;
+        }
+    }
+    &.triangle {
+        .body {
+            border-radius: 0%;
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+        }
+        .arms {
+            margin-top: 90px;
+            width: 60%;
+            .left-arm {
+                rotate: -30deg;
+            }
+            .right-arm {
+                rotate: 30deg;
+            }
+        }
     }
 }

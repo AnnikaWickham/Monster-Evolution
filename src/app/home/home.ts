@@ -16,12 +16,11 @@ export class Home {
   monsterColor = '#b3f47e';
   monsterShape = "1";
 
-  updateMonsterColor(color: string) {
+  updateMonsterColor(color: string) { //1=square, 2=circle, 3=triangle, 4=spikey, 5=skinny, 6=hump
     this.monsterColor = color;
   }
 
-  getShapeNum(text: string) {
+  getShapeNum(text: string) { 
     this.monsterShape = text;
   }
 }
-// TRYING TO SEND COLOR DATA FROM COLOR PICKER TO MONSTER 
