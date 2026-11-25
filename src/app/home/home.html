@@ -1,16 +1,41 @@
 <div class="home-container">
-    <app-greeting [greetingMessage] = "greetingMessage()"></app-greeting>
     <app-counter></app-counter>
     <div class="monster-container">
         <div class="monster">
             <app-monster [color]="monsterColor" shape='1' [eyeNum]="monsterShape"></app-monster>
         </div>
         <div class="monster">
-            <app-monster [color]="monsterColor" [shape]="monsterShape" eyeNum="6"></app-monster>
+            <app-monster [color]="monsterColor" [shape]="monsterShape" [eyeNum]="monsterEyes"></app-monster>
         </div>
     </div>
-    <app-color-picker (colorSelected)="updateMonsterColor($event)"></app-color-picker>
-    <input type="text" #shapeInput (keyup.enter)="getShapeNum(shapeInput.value)">
     MonsterShape: {{ monsterShape }}
+
+    <button (click)='changeEditComponent("color")' [class.selected]="editComponent === 'color'">
+        Color
+    </button>
+    <button (click)='changeEditComponent("shape")' [class.selected]="editComponent === 'shape'">
+        Shape
+    </button>
+    <button (click)='changeEditComponent("eye")' [class.selected]="editComponent === 'eye'">
+        Eyes
+    </button>
+    <button (click)='changeEditComponent("mouth")' [class.selected]="editComponent === 'mouth'">
+        Mouth
+    </button>
+    
+    @switch (editComponent) {
+        @case ("color") {
+            <app-color-picker (colorSelected)="updateMonsterColor($event)" [monsterColor]="monsterColor"></app-color-picker>
+        }
+        @case ("shape") {
+            <app-shape-picker (shapeSelected)="updateMonsterShape($event)" [monsterColor]="monsterColor" [monsterShape]="monsterShape" [monsterEyeNum]="monsterEyes"></app-shape-picker>
+        }
+        @case ("eye") {
+            <app-eye-picker (eyesSelected)="updateMonsterEyes($event)" [monsterColor]="monsterColor" [monsterShape]="monsterShape" [monsterEyeNum]="monsterEyes"></app-eye-picker>
+        }
+        @default {
+            <app-mouth-picker></app-mouth-picker>
+        }
+    }
 
 </div>
