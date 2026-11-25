@@ -10,6 +10,7 @@ import { NgClass } from '@angular/common';
 export class Monster {
   @Input() color = '#b3f47e';
   @Input() shape = "1";
+  @Input() eyeNum = "1";
 
   getShape(): string {
     if (this.shape === "1") {
