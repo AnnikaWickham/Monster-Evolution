@@ -3,10 +3,10 @@
     <app-counter></app-counter>
     <div class="monster-container">
         <div class="monster">
-            <app-monster [color]="monsterColor" shape='1'></app-monster>
+            <app-monster [color]="monsterColor" shape='1' [eyeNum]="monsterShape"></app-monster>
         </div>
         <div class="monster">
-            <app-monster [color]="monsterColor" [shape]="monsterShape"></app-monster>
+            <app-monster [color]="monsterColor" [shape]="monsterShape" eyeNum="6"></app-monster>
         </div>
     </div>
     <app-color-picker (colorSelected)="updateMonsterColor($event)"></app-color-picker>
