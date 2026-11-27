@@ -12,6 +12,7 @@ export class EyePicker {
   @Input() monsterColor = '#b3f47e';
   @Input() monsterShape = "1";
   @Input() monsterEyeNum = "1";
+  @Input() monsterMouthNum = "1";
 
   @Output() eyesSelected = new EventEmitter<string>();
 

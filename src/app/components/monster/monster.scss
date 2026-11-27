@@ -65,9 +65,15 @@
     }
     .eyes {
         position: relative;
-        margin-top: -15%;
+        margin-top: 0%;
         height: 30%;
         width: 80%;
+    }
+    .mouth {
+        position: relative;
+        margin-top: 10%;
+        height: 20%;
+        width: 50%;
     }
 
     &.square {
@@ -128,6 +134,12 @@
         .arms {
             width: 45%;
             margin-top: 25%;
+        }
+        .mouth {
+            width: 30%;
+        }
+        .eyes {
+            width: 60%;
         }
     }
     &.hump {

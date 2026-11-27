@@ -18,6 +18,7 @@ export class Home {
   monsterColor = '#b3f47e';
   monsterShape = "1";
   monsterEyes = "1";
+  monsterMouth = "1";
   editComponent = "color";
 
   updateMonsterColor(color: string) {
@@ -30,6 +31,10 @@ export class Home {
 
   updateMonsterEyes(num: string) { //9 different eye choices
     this.monsterEyes = num;
+  }
+
+  updateMonsterMouth(num: string) { //9 different mouth choices
+    this.monsterMouth = num;
   }
 
   changeEditComponent(text: string) {

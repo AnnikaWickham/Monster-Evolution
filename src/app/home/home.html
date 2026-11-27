@@ -2,10 +2,7 @@
     <app-counter></app-counter>
     <div class="monster-container">
         <div class="monster">
-            <app-monster [color]="monsterColor" shape='1' [eyeNum]="monsterShape"></app-monster>
-        </div>
-        <div class="monster">
-            <app-monster [color]="monsterColor" [shape]="monsterShape" [eyeNum]="monsterEyes"></app-monster>
+            <app-monster [color]="monsterColor" [shape]="monsterShape" [eyeNum]="monsterEyes" [mouthNum]="monsterMouth"></app-monster>
         </div>
     </div>
     MonsterShape: {{ monsterShape }}
@@ -28,13 +25,13 @@
             <app-color-picker (colorSelected)="updateMonsterColor($event)" [monsterColor]="monsterColor"></app-color-picker>
         }
         @case ("shape") {
-            <app-shape-picker (shapeSelected)="updateMonsterShape($event)" [monsterColor]="monsterColor" [monsterShape]="monsterShape" [monsterEyeNum]="monsterEyes"></app-shape-picker>
+            <app-shape-picker (shapeSelected)="updateMonsterShape($event)" [monsterColor]="monsterColor" [monsterShape]="monsterShape" [monsterEyeNum]="monsterEyes" [monsterMouthNum]="monsterMouth"></app-shape-picker>
         }
         @case ("eye") {
-            <app-eye-picker (eyesSelected)="updateMonsterEyes($event)" [monsterColor]="monsterColor" [monsterShape]="monsterShape" [monsterEyeNum]="monsterEyes"></app-eye-picker>
+            <app-eye-picker (eyesSelected)="updateMonsterEyes($event)" [monsterColor]="monsterColor" [monsterShape]="monsterShape" [monsterEyeNum]="monsterEyes" [monsterMouthNum]="monsterMouth"></app-eye-picker>
         }
         @default {
-            <app-mouth-picker></app-mouth-picker>
+            <app-mouth-picker (mouthSelected)="updateMonsterMouth($event)" [monsterColor]="monsterColor" [monsterShape]="monsterShape" [monsterEyeNum]="monsterEyes" [monsterMouthNum]="monsterMouth"></app-mouth-picker>
         }
     }
 
