@@ -2,40 +2,62 @@
     padding: 16px;
     background-color: beige;
 
-    .monster-container {
+    .title-text {
+        padding: 20px;
+        height: 40px;
+        font-size: 60px;
+        font-family: "Oxygen";
+        font-weight: 700;
+        background-color: #0b95c7;
+    }
+
+    .customize-container {
         display: flex;
-        
-        .monster {
+        .monster-container {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 500px;
-            height: 500px;
-            background-color: rgb(228, 208, 185);
-            app-monster {
-                width: 100%;
-                height: 100%;
+            .monster {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                width: 500px;
+                height: 500px;
+                background-color: rgb(228, 208, 185);
+                app-monster {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+        .con {
+            display: flex;
+            flex-direction: column;
+            .buttons-container {
+                margin-left: 10px;
+                button {
+                    border: 2px solid transparent;
+                    height: 60px;
+                    width: 215px;
+                    border-radius: 2px;
+                    background-color: rgb(233, 233, 233);
+                    cursor: pointer;
+                    margin: 5px;
+                    border: 1px solid #409fc1;
+                    font-size: 30px;
+                    font-family: "Chewy", system-ui;
+                }
+
+                button.selected {
+                    outline: 1px solid #0b95c7;
+                    background-color: #cfcfcf;
+                }
+            }
+            .edit-container {
+                margin-left: 10px;
+                height: 100%;
             }
         }
     }
-    
-    button {
-        border: 2px solid transparent;
-        height: 40px;
-        width: 50px;
-        border-radius: 2px;
-        background-color: rgb(233, 233, 233);
-        cursor: pointer;
-        margin: 5px;
-        border: 1px solid #409fc1;
-    }
-
-    button.selected {
-        outline: 1px solid #0b95c7;
-        background-color: #cfcfcf;
-    }
-
 }

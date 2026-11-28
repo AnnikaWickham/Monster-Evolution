@@ -1,6 +1,10 @@
-<mat-form-field appearance="fill">
-    <mat-label>Pick or type a color</mat-label>
-    <input matInput type="color" [value]="monsterColor" (input)="selectColor($event)"/>
-</mat-form-field>
+<div class="color-container">
+    <p class="text">
+        Pick A Color!
+    </p>
+    <div class="big-box">
+        <input class="color-box" matInput type="color" [value]="monsterColor" (input)="selectColor($event)"/>
+    </div>
+</div>
 
 

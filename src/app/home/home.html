@@ -1,38 +1,46 @@
 <div class="home-container">
     <app-counter></app-counter>
-    <div class="monster-container">
-        <div class="monster">
-            <app-monster [color]="monsterColor" [shape]="monsterShape" [eyeNum]="monsterEyes" [mouthNum]="monsterMouth"></app-monster>
+    <div class="title-text">
+        Customize Your Monster!
+    </div>
+    <div class="customize-container">
+        <div class="monster-container">
+            <div class="monster">
+                <app-monster [color]="monsterColor" [shape]="monsterShape" [eyeNum]="monsterEyes" [mouthNum]="monsterMouth"></app-monster>
+            </div>
+        </div>
+        <div class="con">
+            <div class="buttons-container">
+                <button (click)='changeEditComponent("color")' [class.selected]="editComponent === 'color'">
+                    Color
+                </button>
+                <button (click)='changeEditComponent("shape")' [class.selected]="editComponent === 'shape'">
+                    Shape
+                </button>
+                <button (click)='changeEditComponent("eye")' [class.selected]="editComponent === 'eye'">
+                    Eyes
+                </button>
+                <button (click)='changeEditComponent("mouth")' [class.selected]="editComponent === 'mouth'">
+                    Mouth
+                </button>
+            </div>
+            
+            <div class="edit-container">
+                @switch (editComponent) {
+                    @case ("color") {
+                        <app-color-picker (colorSelected)="updateMonsterColor($event)" [monsterColor]="monsterColor"></app-color-picker>
+                    }
+                    @case ("shape") {
+                        <app-shape-picker (shapeSelected)="updateMonsterShape($event)" [monsterColor]="monsterColor" [monsterShape]="monsterShape" [monsterEyeNum]="monsterEyes" [monsterMouthNum]="monsterMouth"></app-shape-picker>
+                    }
+                    @case ("eye") {
+                        <app-eye-picker (eyesSelected)="updateMonsterEyes($event)" [monsterColor]="monsterColor" [monsterShape]="monsterShape" [monsterEyeNum]="monsterEyes" [monsterMouthNum]="monsterMouth"></app-eye-picker>
+                    }
+                    @default {
+                        <app-mouth-picker (mouthSelected)="updateMonsterMouth($event)" [monsterColor]="monsterColor" [monsterShape]="monsterShape" [monsterEyeNum]="monsterEyes" [monsterMouthNum]="monsterMouth"></app-mouth-picker>
+                    }
+                }
+            </div>
         </div>
     </div>
-    MonsterShape: {{ monsterShape }}
-
-    <button (click)='changeEditComponent("color")' [class.selected]="editComponent === 'color'">
-        Color
-    </button>
-    <button (click)='changeEditComponent("shape")' [class.selected]="editComponent === 'shape'">
-        Shape
-    </button>
-    <button (click)='changeEditComponent("eye")' [class.selected]="editComponent === 'eye'">
-        Eyes
-    </button>
-    <button (click)='changeEditComponent("mouth")' [class.selected]="editComponent === 'mouth'">
-        Mouth
-    </button>
-    
-    @switch (editComponent) {
-        @case ("color") {
-            <app-color-picker (colorSelected)="updateMonsterColor($event)" [monsterColor]="monsterColor"></app-color-picker>
-        }
-        @case ("shape") {
-            <app-shape-picker (shapeSelected)="updateMonsterShape($event)" [monsterColor]="monsterColor" [monsterShape]="monsterShape" [monsterEyeNum]="monsterEyes" [monsterMouthNum]="monsterMouth"></app-shape-picker>
-        }
-        @case ("eye") {
-            <app-eye-picker (eyesSelected)="updateMonsterEyes($event)" [monsterColor]="monsterColor" [monsterShape]="monsterShape" [monsterEyeNum]="monsterEyes" [monsterMouthNum]="monsterMouth"></app-eye-picker>
-        }
-        @default {
-            <app-mouth-picker (mouthSelected)="updateMonsterMouth($event)" [monsterColor]="monsterColor" [monsterShape]="monsterShape" [monsterEyeNum]="monsterEyes" [monsterMouthNum]="monsterMouth"></app-mouth-picker>
-        }
-    }
-
 </div>

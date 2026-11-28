@@ -1,6 +1,31 @@
-.color-banner {
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 12px;
-    font-weight: 500;
+.color-container {
+    margin-left: 5px;
+    .text {
+        margin-top: 20px;
+        margin-bottom: 5px;
+        height: 40px;
+        font-family: "Oxygen";
+        font-size: 45px;
+    }
+    .big-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 250px;
+        width: 250px;
+        background-color: rgb(255, 255, 255);
+
+        .color-box {
+            height: 200px;
+            width: 200px;
+            border-radius: 10px;
+            border: none;
+            background-color: none;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    
 }
